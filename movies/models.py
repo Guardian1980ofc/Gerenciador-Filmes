@@ -59,6 +59,8 @@ class Movie(BaseModel):
         related_name="movies", 
         blank=True
     )
+    poster = models.ImageField(upload_to='poster/', null=True, blank=True)
+    
 
     def __str__(self):
         return self.name
