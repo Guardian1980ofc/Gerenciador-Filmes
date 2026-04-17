@@ -1,0 +1,15 @@
+# Ambiente Virtual
+venv/
+
+# Banco de Dados local (SQLite)
+*.sqlite3
+
+# Arquivos compilados do Python
+__pycache__/
+*.py[cod]
+
+# Variáveis de ambiente (Segurança - Aula 08)
+.env
+
+# Pastas de IDEs
+.vscode/
