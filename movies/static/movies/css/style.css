@@ -1,0 +1,81 @@
+/* Configurações Gerais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #141414;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1,
+h3 {
+    color: #e50914;
+    /* Vermelho Netflix */
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #e50914;
+}
+
+/* Layout da Lista (Cards) */
+.movie-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.movie-item {
+    background: #2f2f2f;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.movie-item:hover {
+    transform: scale(1.05);
+}
+
+.movie-item img {
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+}
+
+/* Detalhes do Filme */
+.movie-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #1f1f1f;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.poster-wrapper img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.author-info {
+    font-size: 1.2em;
+    color: #bbb;
+    margin-top: -10px;
+}
+
+.page-footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #666;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}

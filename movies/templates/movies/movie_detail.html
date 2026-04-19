@@ -1,0 +1,44 @@
+{% extends 'movies/base.html' %}
+
+{% block title %} {{ movie.name }} {% endblock %}
+
+{% block content %}
+<nav class="breadcrumb">
+    <a href="{% url 'movie_list' %}">⬅ Back to list</a>
+</nav>
+
+<article class="movie-detail">
+    <h1>{{ movie.name }}</h1>
+
+    {% if movie.poster %}
+    <div class="poster-wrapper">
+        <img src="{{ movie.poster.url }}" alt="Poster of {{ movie.name }}">
+    </div>
+    {% endif %}
+
+    <div class="main-info">
+        <ul>
+            <li><strong>Genre:</strong> {{ movie.genre }}</li>
+            <li><strong>Director:</strong> {{ movie.director.name }}</li>
+            <li><strong>Score:</strong> {{ movie.score }}/5</li>
+        </ul>
+    </div>
+
+    <section class="cast">
+        <h3>Cast / Authors</h3>
+        <ul>
+            {% for actor in movie.actors.all %}
+            <li>{{ actor.name }}</li>
+            {% empty %}
+            <li>No actors registered for this movie.</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section class="synopsis">
+        <h3>Synopsis</h3>
+        <p>{{ movie.description }}</p>
+    </section>
+</article>
+
+{% endblock %}

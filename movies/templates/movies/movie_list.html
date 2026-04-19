@@ -1,0 +1,25 @@
+{% extends 'movies/base.html' %}
+
+{% block title %} Movies List {% endblock %}
+
+{% block content %}
+<h1>All Movies</h1>
+
+<div class="movie-container">
+    {% for movie in movies %}
+    <section class="movie-item">
+        {% if movie.poster %}
+        <a href="{% url 'movie_detail' movie.pk %}">
+            <img src="{{ movie.poster.url }}" alt="Poster de {{ movie.name }}" width="150">
+        </a>
+        {% endif %}
+
+        <h3><a href="{% url 'movie_detail' movie.pk %}">{{ movie.name }}</a></h3>
+
+        <hr>
+    </section>
+    {% empty %}
+    <p>No movies in the system.</p>
+    {% endfor %}
+</div>
+{% endblock %}
